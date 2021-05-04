@@ -52,10 +52,6 @@ public class JpaMain {
             List<Member> result = em.createQuery("select m from Member as m", Member.class)
                     .getResultList();
 
-            for (Member member : result) {
-                System.out.println("member.getName() = " + member.getName());
-            }
-
             tx.commit();
         } catch (Exception e){
             tx.rollback();
